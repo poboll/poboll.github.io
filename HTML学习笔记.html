@@ -66,19 +66,20 @@
   <div class="col">
     <h4><a href="#css">CSS基础</a></h4>
     <ul>
-      <li><a href="#css-syntax">CSS基础简介</a></li>
-      <li><a href="#css-declaration-order">CSS基础选择器</a></li>
-      <li><a href="#css-import">CSS字体属性
-      <li><a href="#css-media-queries">CSS文本属性</a></li>
-      <li><a href="#css-prefixed-properties">CSS文本属性</a></li>
-      <li><a href="#css-single-declarations">CSS引入方式</a></li>
-      <li><a href="#css-shorthand">Chrome调试工具</a></li>
-      <li><a href="#css-nesting">综合案例</a></li>
-      <li><a href="#css-operators">Less 和 Sass 中的操作符</a></li>
-      <li><a href="#css-comments">注释</a></li>
-      <li><a href="#css-classes">class 命名</a></li>
-      <li><a href="#css-selectors">选择器</a></li>
-      <li><a href="#css-organization">综合案例</a></li>
+      <li><a href="#css-introduction">CSS基础简介</a></li>
+      <li><a href="#css-selectors">CSS基础选择器</a></li>
+      <li><a href="#css-font-attributet">CSS字体属性
+      <li><a href="#css-text-attribute">CSS文本属性</a></li>
+      <li><a href="#css-color-value">常见颜色取值</a></li>
+      <li><a href="#css-way-introduction">CSS引入方式</a></li>
+      <li><a href="#css-debug">Chrome调试工具</a></li>
+      <li><a href="#css-case">综合案例</a></li>
+      <li><a href="#css-operators">...</a></li>
+      <li><a href="#css-comments">...</a></li>
+      <li><a href="#css-classes">...</a></li>
+      <li><a href="#css-selectors">...</a></li>
+      <li><a href="#css-organization">...</a></li>
+      <li><a href="#css-syntax">代码规范</a></li>
     </ul>
   </div>
 </div>
@@ -597,7 +598,7 @@
 <h2 id="css">CSS</h2>
 <div class="section" id="css-syntax">
   <div class="col">
-            <h3>语法</h3>
+            <h3>代码规范</h3>
             <ul>
                 <li>用两个空格来代替制表符（tab） -- 这是唯一能保证在所有环境下获得一致展现的方法。</li>
                 <li>为选择器分组时，将单独的选择器单独放在一行。</li>
@@ -614,26 +615,26 @@
                 <li>为选择器中的属性添加双引号，例如，<code>input[type="text"]</code>。<a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">只有在某些情况下是可选的</a>，但是，为了代码的一致性，建议都加上双引号。</li>
                 <li>避免为 0 值指定单位，例如，用 <code>margin: 0;</code> 代替 <code>margin: 0px;</code>。</li>
             </ul>
-            <p>对于这里用到的术语有疑问吗？请参考 Wikipedia 上的 <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article</a>。</p>
+            <p>请参考 Wikipedia 上的 <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article</a>。</p>
         </div>
         <div class="col">
             <figure class="highlight">
                 <pre><code class="language-css" data-lang="css"><span class="c">/* Bad CSS */</span>
 <span class="nc">.selector</span><span class="o">,</span> <span class="nc">.selector-secondary</span><span class="o">,</span> <span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span> <span class="p">{</span>
-                <span class="nl">padding</span><span class="p">:</span><span class="m">15px</span><span class="p">;</span>
-                <span class="nl">margin</span><span class="p">:</span><span class="m">0px</span> <span class="m">0px</span> <span class="m">15px</span><span class="p">;</span>
-                <span class="nl">background-color</span><span class="p">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
-                <span class="nl">box-shadow</span><span class="p">:</span><span class="m">0px</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#CCC</span><span class="p">,</span><span class="nb">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#FFFFFF</span>
+  <span class="nl">padding</span><span class="p">:</span><span class="m">15px</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span><span class="m">0px</span> <span class="m">0px</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
+    <span class="nl">box-shadow</span><span class="p">:</span><span class="m">0px</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#CCC</span><span class="p">,</span><span class="nb">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#FFFFFF</span>
 <span class="p">}</span>
 
 <span class="c">/* Good CSS */</span>
 <span class="nc">.selector</span><span class="o">,</span>
 <span class="nc">.selector-secondary</span><span class="o">,</span>
 <span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"text"</span><span class="o">]</span> <span class="p">{</span>
-                <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
-                <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
-                <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">.5</span><span class="p">);</span>
-                <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#ccc</span><span class="p">,</span> <span class="nb">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">.5</span><span class="p">);</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#ccc</span><span class="p">,</span> <span class="nb">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">;</span>
 <span class="p">}</span></code></pre>
             </figure>
         </div>
@@ -691,25 +692,23 @@
 
     <div class="section" id="css-import">
         <div class="col">
-            <h3>
-                不要使用 <code>
-                    @import../static/css/e4dc15beefe54447a3d6433ae721db40.css
-                    <p>与 <code>&lt;link&gt;</code> 标签相比，<code>@import../static/css/571f80defc4d499682a35ec0d0c95fd8.css 指令要慢很多，不光增加了额外的请求次数，还会导致不可预料的问题。替代办法有以下几种：</p>
+            <h3>不要使用<code>@import</code> </h3>
+                    <p>与 <code>&lt;link&gt;</code> 标签相比，<code>@import</code> 指令要慢很多，不光增加了额外的请求次数，还会导致不可预料的问题。替代办法有以下几种：</p>
                     <ul>
                         <li>使用多个 <code>&lt;link&gt;</code> 元素</li>
                         <li>通过 <a href="https://sass-lang.com/">Sass</a> 或 <a href="http://lesscss.org/">Less</a> 之类的 CSS 预处理器将多个 CSS 文件编译为一个文件</li>
                         <li>通过 Rails、Jekyll 或其他系统中提供过 CSS 文件合并功能</li>
                     </ul>
                     <p>请参考 <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">Steve Souders 的文章</a>了解更多知识。</p>
-        </div>
+</div>
         <div class="col">
             <figure class="highlight">
                 <pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Use link elements --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"core.css"</span><span class="nt">&gt;</span>
 
-<span class="c">&lt;!-- Avoid @import../static/css/8e35b8e6c7cd41be9abbf9d27e5f6906.css --&gt;</span>
+<span class="c">&lt;!-- Avoid @import --&gt;</span>
 <span class="nt">&lt;style&gt;</span>
-                <span class="k">@import../static/css/764ab410301a4290b4a87b31791e03ae.css <span class="sx">url("more.css")</span><span class="p">;</span>
+  <span class="k">@import <span class="sx">url("more.css")</span><span class="p">;</span>
 <span class="nt">&lt;/style&gt;</span></code></pre>
             </figure>
         </div>
